@@ -4,7 +4,7 @@ import tensorflow as tf
 from sklearn.preprocessing import StandardScaler
 
 # Load the model (make sure to give the correct path to your saved model)
-model = tf.keras.models.load_model('C:\Users\adith\OneDrive\Documents\sems 6\mlops\mlopMP\breast_cancer_model.h5')
+model = tf.keras.models.load_model('C:/Users/adith/OneDrive/Documents/sems 6/mlops/mlopMP/breast_cancer_model.h5')
 
 # Define the Streamlit app
 st.title('Breast Cancer Prediction')

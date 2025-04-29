@@ -111,9 +111,6 @@ Possible future enhancements include:
 • Adding visualizations of prediction confidence  
 • Deploying the Streamlit app on the cloud  
 
-### License  
-Dataset used is publicly available via UCI Machine Learning Repository.  
-This project is shared under the MIT License.
 
 ### Author  
 Your Name: Adithisri Vishwanath

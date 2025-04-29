@@ -4,10 +4,6 @@ import joblib
 import numpy as np
 from sklearn import datasets  # You missed this in your code
 
-# Load model and scaler
-mlp = joblib.load('mlp_2layer_model.pkl')
-scaler = joblib.load('scaler.pkl')
-
 # Load the dataset (this was missing)
 data = datasets.load_breast_cancer()
 X_train = data.data

@@ -1,0 +1,39 @@
+# Install libraries (only if needed)
+# !pip install numpy pandas scikit-learn joblib
+
+from sklearn.datasets import load_breast_cancer
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPClassifier
+import joblib
+
+# Load the dataset
+data = load_breast_cancer()
+X, y = data.data, data.target
+
+# Split data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42, stratify=y
+)
+
+# Initialize and fit the scaler
+scaler = StandardScaler()
+X_train_scaled = scaler.fit_transform(X_train)
+X_test_scaled = scaler.transform(X_test)
+
+# Initialize and train the MLPClassifier
+mlp = MLPClassifier(
+    hidden_layer_sizes=(64, 32),
+    activation='relu',
+    solver='adam',
+    max_iter=500,
+    random_state=42,
+    verbose=True
+)
+mlp.fit(X_train_scaled, y_train)
+
+# Save the trained scaler and model to .pkl files
+joblib.dump(scaler, 'scaler.pkl')
+joblib.dump(mlp, 'mlp_2layer_model.pkl')
+
+print("Scaler and Model have been saved as 'scaler.pkl' and 'mlp_2layer_model.pkl'")
